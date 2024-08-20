@@ -32,14 +32,14 @@ int main(int argc, char* argv[]) {
     TStopwatch time;
     time.Start();
 
-    ROOT::RDataFrame df("Events", argv[0]);
+    ROOT::RDataFrame df("Events", argv[1]);
     std::cout << "Number of events before skimming: " << *df.Count() << std::endl;
 
     auto dfFinal = AXOSelection(df);
     std::cout << "Number of events after skimming: " << *dfFinal.Count() << std::endl;
 
     auto report = dfFinal.Report();
-    dfFinal.Snapshot("Events", argv[1]);
+    dfFinal.Snapshot("Events", argv[2]);
     time.Stop();
 
     report->Print();
