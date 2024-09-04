@@ -9,7 +9,7 @@ log = /afs/cern.ch/user/e/ekauffma/CMSSW_14_0_0_pre2/src/axo/axo_skimming/OUTPUT
 arguments            = FILENAMES output_$(ClusterId)_$(ProcID).root
 
 
-transfer_input_files    = /afs/cern.ch/user/e/ekauffma/CMSSW_14_0_0_pre2/src/axo/axo_skimming/x509_proxy, /afs/cern.ch/user/e/ekauffma/CMSSW_14_0_0_pre2/src/axo/axo_skimming/skim.cxx
+transfer_input_files    = /afs/cern.ch/user/e/ekauffma/CMSSW_14_0_0_pre2/src/axo/axo_skimming/x509_proxy, /afs/cern.ch/user/e/ekauffma/CMSSW_14_0_0_pre2/src/axo/axo_skimming/skim.cxx, /afs/cern.ch/user/e/ekauffma/CMSSW_14_0_0_pre2/src/axol1tl-producer, /afs/cern.ch/user/e/ekauffma/CMSSW_14_0_0_pre2/src/run3_ugt_ml
 # File transfer behavior
 should_transfer_files = yes
 #when_to_transfer_output = ON_EXIT
