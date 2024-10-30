@@ -2,14 +2,14 @@
 executable = scriptcondor_skimming.sh
 
 # where to save log info (change to your directory)
-output = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_0_pre2/src/axo/axo_skimming/OUTPUTDIR/log/scriptcondor_$(ProcID).out
-error = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_0_pre2/src/axo/axo_skimming/OUTPUTDIR/log/scriptcondor_$(ProcID).err
-log = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_0_pre2/src/axo/axo_skimming/OUTPUTDIR/log/scriptcondor_$(ProcID).log
+output = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_15/src/axo_skimming/OUTPUTDIR/log/scriptcondor_$(ProcID).out
+error = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_15/src/axo_skimming/OUTPUTDIR/log/scriptcondor_$(ProcID).err
+log = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_15/src/axo_skimming/OUTPUTDIR/log/scriptcondor_$(ProcID).log
 
 arguments            = FILENAMES output_$(ClusterId)_$(ProcID).root
 
 
-transfer_input_files    = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_0_pre2/src/axo/axo_skimming/x509_proxy, /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_0_pre2/src/axo/axo_skimming/skim.cxx, /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_0_pre2/src/axol1tl-producer, /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_0_pre2/src/run3_ugt_ml
+transfer_input_files    = /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_15/src/axo_skimming/x509_proxy, /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_15/src/axo_skimming/skim.cxx, /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_15/src/axo_skimming/axol1tl-producer, /afs/cern.ch/user/j/jpearkes/work/private/CMSSW_14_0_15/src/axo_skimming/run3_ugt_ml
 # File transfer behavior
 should_transfer_files = yes
 #when_to_transfer_output = ON_EXIT

@@ -45,7 +45,7 @@ python3 axol1tl_inference.py -i ../skimmed.root -o ../ -p -v v3 v4
 cd ..
 echo "added axo score"
 
-xrdcp skimmed_wScores.root root://eoscms.cern.ch//store/group/phys_exotica/axol1tl/test/$2
+xrdcp skimmed_wScores.root root://eoscms.cern.ch//store/group/phys_exotica/axol1tl/Data_ScoutingNano_withAXOscore/2024G/$2 
 echo "copied skimmed file to eos"
 
 rm input.root
