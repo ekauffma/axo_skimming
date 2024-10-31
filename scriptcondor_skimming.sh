@@ -35,19 +35,21 @@ g++ -O3 -o skim skim.cxx $(root-config --cflags --libs)
 echo "built skimming program"
 
 xrdcp $1 input.root
-echo "copied input file"
+echo "copied input file from $1"
 
-cd axol1tl-producer
-python3 axol1tl_inference.py -i ../input.root -o ../ -p
-cd ..
-rm input.root
-echo "added axo score"
-
-./skim input_wScores.root output.root
+./skim input.root skimmed.root
 echo "skim successful"
 
-xrdcp output.root root://cmseos.fnal.gov//store/user/lpctrig/ekauffma/Scouting_2024F_Skims_wScores/$2
+cd axol1tl-producer
+python3 axol1tl_inference.py -i ../skimmed.root -o ../ -p -v v3 v4
+cd ..
+echo "added axo score"
+
+xrdcp skimmed_wScores.root root://eoscms.cern.ch//store/group/phys_exotica/axol1tl/Data_ScoutingNano_withAXOscore/2024G/$2 
 echo "copied skimmed file to eos"
 
-rm input_wScores.root
-rm output.root
+rm input.root
+rm skimmed.root
+rm skimmed_wScores.root
+
+cd ../..

@@ -10,7 +10,9 @@ def sizeof_fmt(num, suffix="B"):
 # Define server and directory path
 xrootd_server = "root://hip-cms-se.csc.fi"
 directory_path = "/store/user/pinkaew/scouting_nano_prod_v0p1_golden/"
-
+era = "2024F"
+#directory_path = "/store/user/pinkaew/scouting_nano_prod_v0p2_golden/"
+#era = "2024G"
 # Run the xrdfs command to list files
 command = f"xrdfs {xrootd_server} ls -l -R {directory_path}"
 result = subprocess.run(command, shell=True, capture_output=True, text=True)
@@ -19,11 +21,11 @@ result = subprocess.run(command, shell=True, capture_output=True, text=True)
 total_size = 0
 total_number = 0
 
-with open('input_files_2024F.txt', 'a') as out_file:
+with open('input_files_'+era+'.txt', 'a') as out_file:
     for line in result.stdout.splitlines():
         parts = line.split()
         if len(parts) > 4 and parts[0] != 'd' and parts[-1][-5:]==".root":  # Check if it's a file line and not a directory line
-            if "2024F" in parts[-1]: # Check if run is 2024F so that we have zerobias scouting
+            if era in parts[-1]: # Check if run is 2024F so that we have zerobias scouting
                 out_file.write("root://hip-cms-se.csc.fi://"+parts[-1]+"\n")
                 total_size += int(parts[3])
                 total_number += 1
