@@ -9,6 +9,7 @@ else
     cp scriptcondor_skimming.sh $1/.
     cd $1
     sed -ie "s#OUTPUTDIR#$1#g" scriptcondor.sub
+    sed -ie "s#OUTPUTFILENAME#$1.root#g" scriptcondor.sub
     sed -ie "s#FILENAMES#$2#g" scriptcondor.sub
 
     condor_submit scriptcondor.sub
