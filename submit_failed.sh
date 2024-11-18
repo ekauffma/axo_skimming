@@ -5,11 +5,11 @@ count="1"
 file=$1
 while read -r line; do
 
-	echo count $count
+	#echo count $count
 
 	input_filename=$(echo $line | awk '{print $1}')
 
-	echo $input_filename
+	#echo $input_filename
 
 	logfile="output_input_files_2024G.txt_"$count$"/log/scriptcondor_0.log"
 

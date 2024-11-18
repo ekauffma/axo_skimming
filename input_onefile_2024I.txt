@@ -1,0 +1,1 @@
+root://cmsxrootd.fnal.gov://store/data/Run2024I/ScoutingPFRun3/NANOAOD/PromptReco-v2/000/386/694/00000/1126d07c-bc3e-41f7-a7e7-c6c6e24bf826.root

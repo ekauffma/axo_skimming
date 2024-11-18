@@ -1,0 +1,1 @@
+root://hip-cms-se.csc.fi:///store/user/pinkaew/scouting_nano_prod_v0p2_golden/ScoutingPFRun3/crab_ScoutingPFRun3_Run2024G-v1_383811-383996_Golden/240927_195620/0000/scouting_nano_1.root

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the path pattern for the files to search
-file_pattern="output_input_files_2024G.txt_*/log/scriptcondor_0.log"
+file_pattern="output_testll_input_files_2024G.txt_*/log/scriptcondor_0.log"
 
 # Initialize counters
 file_count=0
