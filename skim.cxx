@@ -26,7 +26,6 @@ auto AXOSelection(T &df) {
 std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
 {
     const std::vector<std::string> blacklist = {
-        "nScoutingFatJet",
         "ScoutingFatJet_nConstituents",
         "ScoutingFatJet_nCh",
         "ScoutingFatJet_nElectrons",
@@ -55,7 +54,6 @@ std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
         "ScoutingFatJet_tau2",
         "ScoutingFatJet_tau3",
         "ScoutingFatJet_tau4",
-        "nScoutingParticle",
         "ScoutingParticle_charge",
         "ScoutingParticle_pdgId",
         "ScoutingParticle_trkLostInnerHits",
@@ -73,7 +71,6 @@ std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
         "ScoutingParticle_trkNormchi2",
         "ScoutingParticle_trkPhi",
         "ScoutingParticle_trkPt",
-        "nScoutingPrimaryVertex",
         "ScoutingPrimaryVertex_isValidVtx",
         "ScoutingPrimaryVertex_ndof",
         "ScoutingPrimaryVertex_tracksSize",
@@ -84,8 +81,6 @@ std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
         "ScoutingPrimaryVertex_yError",
         "ScoutingPrimaryVertex_z",
         "ScoutingPrimaryVertex_zError",
-        "ScoutingRho",
-        "nScoutingTrack",
         "ScoutingTrack_charge",
         "ScoutingTrack_nTrackerLayersWithMeasurement",
         "ScoutingTrack_nValidPixelHits",
