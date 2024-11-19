@@ -45,11 +45,14 @@ python3 axol1tl_inference.py -i ../skimmed.root -o ../ -p -v v3 v4
 cd ..
 echo "added axo score"
 
-xrdcp skimmed_wScores.root root://eoscms.cern.ch//store/group/phys_exotica/axol1tl/Data_ScoutingNano_withAXOscore/2024G/$2 
+# run full compression algorithm on file
+hadd -f206 skimmed_wScores_compressed.root skimmed_wScores.root
+
+cp skimmed_wScores_compressed.root /eos/cms/store/group/phys_exotica/axol1tl/Data_ScoutingNano_withAXOscore/2024I/$2 
+#xrdcp skimmed_wScores_compressed.root root://eoscms.cern.ch//store/group/phys_exotica/axol1tl/Data_ScoutingNano_withAXOscore/ekauffma_test/$2 
+ls -lh /eos/cms/store/group/phys_exotica/axol1tl/Data_ScoutingNano_withAXOscore/2024I/
 echo "copied skimmed file to eos"
 
 rm input.root
 rm skimmed.root
 rm skimmed_wScores.root
-
-cd ../..
