@@ -16,17 +16,18 @@
  */
 template <typename T>
 auto AXOSelection(T &df) {
-    return df.Filter("(DST_PFScouting_AXOVLoose == true)"
-                     "|| (DST_PFScouting_AXOLoose == true) || (DST_PFScouting_AXONominal == true) || (DST_PFScouting_AXOTight)"
-                     "|| (DST_PFScouting_AXOVTight == true) || (HLT_L1AXOVTight == true) || (DST_PFScouting_ZeroBias == true)",
-		     "passes AXO trigger seed or ZeroBias");
+    return df.Filter("(DST_PFScouting_AXOLoose == true) || (DST_PFScouting_AXONominal == true) || (DST_PFScouting_AXOTight)"
+                     "|| (DST_PFScouting_AXOVTight == true) || (DST_PFScouting_ZeroBias == true)",
+		     "|| (DST_PFScouting_CICADALoose == true) || (DST_PFScouting_CICADAMedium == true) || (DST_PFScouting_CICADATight == true)"
+		     "|| (DST_PFScouting_CICADAVLoose == true) || (DST_PFScouting_CICADAVTight == true)",
+		     "passes AXO trigger seed, CICADA trigger seed, or ZeroBias");
 }
 
 /* Get rid of branches we have no use for */
 std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
 {
     const std::vector<std::string> blacklist = {
-        "nScoutingFatJet",
+        /* "nScoutingFatJet",
         "ScoutingFatJet_nConstituents",
         "ScoutingFatJet_nCh",
         "ScoutingFatJet_nElectrons",
@@ -54,7 +55,7 @@ std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
         "ScoutingFatJet_tau1",
         "ScoutingFatJet_tau2",
         "ScoutingFatJet_tau3",
-        "ScoutingFatJet_tau4",
+        "ScoutingFatJet_tau4", */
         "nScoutingParticle",
         "ScoutingParticle_charge",
         "ScoutingParticle_pdgId",
@@ -73,7 +74,6 @@ std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
         "ScoutingParticle_trkNormchi2",
         "ScoutingParticle_trkPhi",
         "ScoutingParticle_trkPt",
-        "nScoutingPrimaryVertex",
         "ScoutingPrimaryVertex_isValidVtx",
         "ScoutingPrimaryVertex_ndof",
         "ScoutingPrimaryVertex_tracksSize",
