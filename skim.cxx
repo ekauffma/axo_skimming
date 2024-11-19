@@ -84,8 +84,6 @@ std::vector<std::string> DropColumns(std::vector<std::string> &&good_cols)
         "ScoutingPrimaryVertex_yError",
         "ScoutingPrimaryVertex_z",
         "ScoutingPrimaryVertex_zError",
-        "ScoutingRho",
-        "nScoutingTrack",
         "ScoutingTrack_charge",
         "ScoutingTrack_nTrackerLayersWithMeasurement",
         "ScoutingTrack_nValidPixelHits",
